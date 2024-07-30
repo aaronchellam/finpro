@@ -1,18 +1,23 @@
 import React from "react";
 import "./Card.css";
 
-type Props = {}
+interface Props {
+    companyName: string;
+    ticker: string;
+    price: number;
 
-const Card = (props: Props) => {
+}
+// const functionName: functionType = ({parameters}: parametersType): functionReturnType
+const Card: React.FC<Props> = ({companyName, ticker, price}: Props): JSX.Element => {
     return (
         <div className="card">
             <img
-                src="https://pngimg.com/d/apple_logo_PNG19688.png"
+                src="https://cdn.pixabay.com/photo/2024/04/29/00/07/pirates-8726523_640.jpg"
                 alt="Image"
             />
             <div className="details">
-                <h2>AAPL</h2>
-                <p>£110</p>
+                <h2>{companyName} ({ticker})</h2>
+                <p>£{price}</p>
             </div>
             <p className="info">
                 dicant ne natoque feugait morbi adolescens ne prompta vivendo mutat
@@ -20,7 +25,6 @@ const Card = (props: Props) => {
         </div>
     )
 }
-
 
 
 export default Card;
